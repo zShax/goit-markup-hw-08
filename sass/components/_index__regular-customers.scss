@@ -37,7 +37,9 @@
       gap: 30px;
 
       &__element {
-        width: 210px;
+        max-width: 210px;
+
+        width: 45%;
       }
 
       &__heading {

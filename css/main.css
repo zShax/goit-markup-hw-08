@@ -447,7 +447,7 @@ body .container .section--top {
   body .container .section {
     justify-content: center;
     max-width: 480px;
-    padding: 60px 0;
+    padding: 60px 15px;
   }
   body .container .section--top {
     max-width: 450px;
@@ -898,8 +898,8 @@ div.is-hidden {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
-    padding-bottom: 60px;
+    align-items: stretch;
+    padding: 0 15px 60px 15px;
   }
   .main__why-us__element {
     max-width: 450px;
@@ -1043,7 +1043,8 @@ div.is-hidden {
     gap: 30px;
   }
   .main__regular-customers__element, .main__regular-customers__element:active {
-    width: 210px;
+    max-width: 210px;
+    width: 45%;
   }
   .main__regular-customers__heading {
     font-size: 28px;
