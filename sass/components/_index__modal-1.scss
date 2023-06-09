@@ -203,4 +203,16 @@
       }
     }
   }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      &__form-1-container__form-1__checkbox-label {
+        font-size: 12px;
+      }
+
+      &__container {
+        margin: 0 15px;
+      }
+    }
+  }
 }

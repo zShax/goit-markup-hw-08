@@ -6,6 +6,115 @@
 
   border-bottom: 1px solid #ececec;
 
+  &__menu {
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: $background-white;
+
+    &-mobile {
+      color: currentColor;
+      display: block;
+
+      width: 24px;
+      height: 16px;
+
+      padding: 12px 8px;
+    }
+
+    &__container {
+      display: grid;
+      gap: 60px;
+
+      font-weight: 500;
+
+      height: 100%;
+
+      margin: 40px 48px;
+
+      a {
+        color: $text-default;
+        line-height: 1.2;
+
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $brand-blue;
+        }
+      }
+
+      &__navigation {
+        align-self: start;
+        @include flex(column nowrap, flex-start, flex-start);
+        gap: 32px;
+
+        &__element {
+          font-size: 40px;
+          font-weight: 700;
+        }
+      }
+
+      &__contacts {
+        align-self: flex-end;
+        @include flex(column nowrap, flex-start, flex-start);
+        gap: 32px;
+
+        font-size: 24px;
+
+        li:first-child a {
+          color: $brand-blue;
+          font-size: 34px;
+        }
+      }
+
+      &__social-links {
+        @include flex(row nowrap, flex-start, flex-start);
+        gap: 10px;
+
+        max-width: 450px;
+
+        & a {
+          font-size: 16px;
+
+          color: $brand-blue;
+
+          text-decoration: none;
+        }
+
+        &__v-bar {
+          color: #21212133;
+        }
+      }
+
+      &__close-button {
+        cursor: pointer;
+        font-size: 38px;
+
+        position: absolute;
+        top: 10px;
+        right: 15px;
+
+        border: none;
+        background-color: transparent;
+
+        width: 40px;
+        height: 40px;
+
+        &:hover,
+        &:focus {
+          color: $brand-blue;
+        }
+      }
+    }
+  }
+
   // Media Queries for Responsiveness
   // Mobile
   @media screen and (max-width: $breakpoint-mobile) {
@@ -20,15 +129,6 @@
       nav {
         height: 40px;
         width: 40px;
-      }
-
-      &__menu-mobile {
-        display: block;
-
-        width: 24px;
-        height: 16px;
-
-        padding: 12px 8px;
       }
 
       &__navigation {

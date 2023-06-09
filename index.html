@@ -50,11 +50,92 @@
           <span class="logo--blue">Web</span>Studio
         </a>
         <nav>
-          <a class="header__menu-mobile">
+          <a
+            href="#menu-mobile"
+            class="header__menu-mobile js-open-menu"
+            aria-expanded="false"
+          >
             <svg width="24" height="16">
               <use href="./images/icons.svg#menu-mobile"></use>
             </svg>
           </a>
+          <div class="js-menu-container header__menu">
+            <button
+              class="header__menu__container__close-button js-close-menu"
+              type="button"
+            >
+              &times;
+            </button>
+            <div class="header__menu__container">
+              <ul class="header__menu__container__navigation">
+                <li class="header__menu__container__navigation__element">
+                  <a href="./index.html#home">Studio</a>
+                </li>
+                <li class="header__menu__container__navigation__element">
+                  <a href="./portfolio.html">Portfolio</a>
+                </li>
+                <li class="header__menu__container__navigation__element">
+                  <a href="#contacts">Contacts</a>
+                </li>
+              </ul>
+              <ul class="header__menu__container__contacts">
+                <li><a href="tel:+12127724150">+1&nbsp;212-772-4150</a></li>
+                <li>
+                  <a href="mailto:info@devstudio.com">info@devstudio.com</a>
+                </li>
+              </ul>
+              <ul class="header__menu__container__social-links">
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="blank"
+                    rel="nofollow noopener noreferrer"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <span class="header__menu__container__social-links__v-bar"
+                    >|</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.twitter.com/"
+                    target="blank"
+                    rel="nofollow noopener noreferrer"
+                    >Twitter</a
+                  >
+                </li>
+                <li>
+                  <span class="header__menu__container__social-links__v-bar"
+                    >|</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/"
+                    target="blank"
+                    rel="nofollow noopener noreferrer"
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <span class="header__menu__container__social-links__v-bar"
+                    >|</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="blank"
+                    rel="nofollow noopener noreferrer"
+                    >Linkedin</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <script src="./js/mobile-menu.js"></script>
           <ul class="header__navigation">
             <li
               class="header__navigation__element header__navigation__element--active"
@@ -72,7 +153,9 @@
               </a>
             </li>
             <li class="header__navigation__element">
-              <a class="font__size--14 font__weight--500"> Contacts </a>
+              <a href="#contacts" class="font__size--14 font__weight--500">
+                Contacts
+              </a>
             </li>
           </ul>
         </nav>
@@ -242,10 +325,26 @@
             Our Team
           </h2>
           <figure class="main__our-team__figure font__size--16">
-            <img
+            <!-- <img
               src="./images/christopher-walker.jpg"
               alt="Christopher Walker - Product Designer"
-            />
+            /> -->
+
+            <picture>
+              <source
+                media="(min-resolution: 2dppx)"
+                srcset="./images/christopher-walker_mobile@2x.png 2x"
+              />
+              <source
+                media="(min-resolution: 1.5dppx)"
+                srcset="./images/christopher-walker_mobile@1.5x.png 1.5x"
+              />
+              <img
+                src="./images/christopher-walker.jpg"
+                alt="Christopher Walker - Product Designer"
+              />
+            </picture>
+
             <figcaption class="main__our-team__figure__caption">
               <strong>Christopher Walker</strong><br />
               <p class="font__color--secondary">Product Designer</p>

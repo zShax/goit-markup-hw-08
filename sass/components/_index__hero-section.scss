@@ -3,7 +3,6 @@
 
   text-align: center;
 
-  background: url(../images/hero-background.jpg) $brand-gray;
   color: $text-white;
 
   &__container {
@@ -45,6 +44,7 @@
 
   @media screen and (max-width: $breakpoint-mobile) {
     width: 100%;
+    background: url(../images/hero-background_mobile.jpg) $brand-gray;
 
     &__container {
       max-width: $mobile__width-max;
@@ -66,6 +66,7 @@
 
   @media screen and (min-width: $breakpoint-desktop) {
     width: $desktop__width-max;
+    background: url(../images/hero-background.jpg) $brand-gray;
 
     &__heading {
       width: 696px;
