@@ -50,4 +50,20 @@
       }
     }
   }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      &__heading {
+        font-size: 28px;
+      }
+    }
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    & {
+      &__figure img {
+        width: 270px;
+        height: auto;
+      }
+    }
+  }
 }

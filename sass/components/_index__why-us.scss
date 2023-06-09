@@ -1,18 +1,13 @@
 .main__why-us {
-  @include flex(row nowrap, center, flex-start);
   gap: 30px;
 
   background-color: $background-white;
 
   &__element {
-    max-width: 270px;
-
     svg {
-      max-width: 270px;
+      max-width: 100%;
 
       background-color: $background-secondary;
-
-      padding: 25px 100px;
     }
 
     &__heading {
@@ -25,6 +20,40 @@
       text-align: left;
 
       line-height: 1.5;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    @include flex(column nowrap, center, center);
+
+    padding-bottom: 60px;
+
+    &__element {
+      max-width: $mobile__width-min;
+
+      svg {
+        padding: 25px 0;
+
+        width: 100%;
+      }
+
+      &__heading {
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    @include flex(row nowrap, center, flex-start);
+
+    &__element {
+      max-width: 270px;
+
+      svg {
+        max-width: 270px;
+
+        padding: 25px 100px;
+      }
     }
   }
 }

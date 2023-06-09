@@ -39,6 +39,11 @@ textarea {
   font: inherit;
   color: inherit;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* End of custom normalizer
      ========================================================================== */
 

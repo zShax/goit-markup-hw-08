@@ -1,27 +1,15 @@
 .footer {
-  width: $width-max;
-
-  @include flex(row nowrap, center, center);
-  gap: 105px;
-
   background-color: $brand-gray;
 
   &__container-1 {
-    @include flex(column nowrap, flex-start, flex-start);
-    row-gap: 12px;
-
-    margin: 60px 0;
-
     & .logo {
       margin-bottom: 16px;
     }
   }
 
   &__container-2 {
-    @include flex(column nowrap, flex-start, flex-start);
+    display: flex;
     gap: 20px 0;
-
-    margin-bottom: 20px;
 
     &__social-links {
       @include flex(row nowrap, center, center);
@@ -49,11 +37,6 @@
   }
 
   &__container-3 {
-    @include flex(row nowrap, flex-start, flex-start);
-    gap: 12px;
-
-    margin-bottom: 20px;
-
     &__newsletter {
       @include flex(column nowrap, flex-start, flex-start);
 
@@ -61,8 +44,6 @@
 
       &__input {
         transition: border-color $transition-default;
-
-        width: 358px;
 
         filter: drop-shadow(0px 4px 4px #00000026);
         background-color: transparent;
@@ -103,13 +84,125 @@
         border: none;
         border-radius: 4px;
 
-        margin-top: 37px;
-
         &:hover,
         &:focus {
           cursor: pointer;
 
           background-color: $brand-blue-hover;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      @include flex(column nowrap, center, center);
+      gap: 60px;
+
+      box-sizing: border-box;
+
+      text-align: center;
+      max-width: $mobile__width-max;
+      width: 100%;
+
+      padding: 60px 0;
+
+      &__container-1 {
+        @include flex(column nowrap, center, center);
+        gap: 12px;
+
+        max-width: $mobile__width-min;
+      }
+
+      &__container-2 {
+        @include flex(column nowrap, center, center);
+
+        max-width: $mobile__width-min;
+      }
+
+      &__container-3 {
+        @include flex(column nowrap, center, center);
+        max-width: $mobile__width-min;
+        width: 100%;
+
+        & form {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        &__newsletter {
+          @include flex(column nowrap, center, center);
+
+          &__input {
+            width: 90%;
+          }
+
+          &__submit {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    & {
+      width: $desktop__width-max;
+
+      @include flex(row nowrap, center, center);
+      gap: 105px;
+
+      &__container-1 {
+        @include flex(column nowrap, flex-start, flex-start);
+        row-gap: 12px;
+
+        margin: 60px 0;
+      }
+
+      &__container-2 {
+        @include flex(column nowrap, flex-start, flex-start);
+        gap: 20px 0;
+
+        margin-bottom: 20px;
+
+        &__social-links {
+          @include flex(row nowrap, center, center);
+          gap: 10px;
+
+          & svg {
+            transition: background-color $transition-default,
+              color $transition-default;
+
+            overflow: visible;
+            color: $text-white;
+
+            background: #ffffff1a;
+
+            padding: 12px;
+            border-radius: 100%;
+
+            &:hover,
+            &:focus {
+              background-color: $brand-blue;
+              color: $background-white;
+            }
+          }
+        }
+      }
+
+      &__container-3 {
+        @include flex(row nowrap, flex-start, flex-start);
+        gap: 12px;
+
+        margin-bottom: 20px;
+
+        &__newsletter {
+          &__input {
+            width: 358px;
+          }
+          &__submit {
+            margin-top: 37px;
+          }
         }
       }
     }

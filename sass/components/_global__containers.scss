@@ -1,4 +1,3 @@
-// Body
 body {
   color: $text-default;
   letter-spacing: 0.02em;
@@ -7,32 +6,90 @@ body {
   .container {
     @include flex(column wrap, center, center);
 
-    width: 100%;
-    min-width: $width-min;
-    height: 100%;
-
     margin: 0;
+
+    .section {
+      margin: 0;
+
+      &--top {
+        display: flex;
+
+        margin: 0;
+      }
+    }
   }
 
-  .main {
-    max-width: $width-max;
+  // Media Queries for Responsiveness
+  // Mobile
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      max-width: $mobile__width-max;
+
+      .container {
+        box-sizing: border-box;
+        max-width: $mobile__width-min;
+
+        .main {
+          @include flex(column wrap, center, center);
+          max-width: $mobile__width-max;
+        }
+
+        .section {
+          justify-content: center;
+
+          max-width: $mobile__width-max;
+
+          padding: 60px 0;
+
+          &--top {
+            max-width: $mobile__width-min;
+
+            padding: 60px 0 0 0;
+          }
+        }
+      }
+    }
   }
 
-  .section {
-    display: flex;
-    max-width: $width-max;
+  // Tablet
+  @media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    .container {
+      min-width: $tablet__width-min;
 
-    padding: 94px 0 94px 0;
+      .main {
+        max-width: $tablet__width-max;
+      }
 
-    margin: 0;
+      .section {
+        max-width: $tablet__width-max;
+
+        &--top {
+          max-width: $tablet__width-max;
+        }
+      }
+    }
   }
 
-  .section--top {
-    display: flex;
-    max-width: $width-max;
+  // Desktop
+  @media screen and (min-width: $breakpoint-desktop) {
+    .container {
+      min-width: $desktop__width-min;
 
-    padding: 94px 0 0 0;
+      .main {
+        max-width: $desktop__width-max;
+      }
 
-    margin: 0;
+      .section {
+        max-width: $desktop__width-max;
+
+        padding: 94px 0 94px 0;
+
+        &--top {
+          max-width: $desktop__width-max;
+
+          padding: 94px 0 0 0;
+        }
+      }
+    }
   }
 }

@@ -26,4 +26,10 @@
       padding: 27px 0;
     }
   }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      display: none;
+    }
+  }
 }

@@ -1,5 +1,4 @@
 .main__hero-section {
-  width: $width-max;
   height: 100%;
 
   text-align: center;
@@ -19,13 +18,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f3030",endColorstr="#2f3030",GradientType=1);
   }
 
-  &__heading {
-    font-size: 44px;
-    line-height: 1.4;
-
-    margin: 200px 0 0 0;
-  }
-
   &__button {
     transition: background-color $transition-default;
     cursor: pointer;
@@ -41,8 +33,6 @@
     box-shadow: 0px 3px 1px #0000001a, 0px 1px 2px #00000014,
       0px 2px 2px #0000001f;
 
-    margin: 0 0 200px 0;
-
     &:active {
       @extend .main__hero-section__button;
     }
@@ -50,6 +40,44 @@
     &:hover,
     &:focus {
       background-color: $brand-blue-hover;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100%;
+
+    &__container {
+      max-width: $mobile__width-max;
+    }
+
+    &__heading {
+      width: 360px;
+
+      font-size: 26px;
+      line-height: 1.8;
+
+      margin: 118px 0 0 0;
+    }
+
+    &__button {
+      margin: 0 0 118px 0;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: $desktop__width-max;
+
+    &__heading {
+      width: 696px;
+
+      font-size: 44px;
+      line-height: 1.4;
+
+      margin: 200px 0 0 0;
+    }
+
+    &__button {
+      margin: 0 0 200px 0;
     }
   }
 }

@@ -1,6 +1,5 @@
 .main__regular-customers {
   @include flex(row wrap, center, center);
-  gap: 50px 30px;
 
   &__heading {
     width: 100%;
@@ -10,10 +9,10 @@
 
   &__element {
     transition: color $transition-default, border-color $transition-default;
+    box-sizing: border-box;
 
     @include flex(row nowrap, center, center);
 
-    width: 170px;
     height: 92px;
 
     color: $svg-inactive;
@@ -30,6 +29,30 @@
       color: $brand-blue;
 
       border-color: $brand-blue;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      gap: 30px;
+
+      &__element {
+        width: 210px;
+      }
+
+      &__heading {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    & {
+      gap: 50px 30px;
+
+      &__element {
+        width: 170px;
+      }
     }
   }
 }
